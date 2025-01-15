@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Microservices</title>
+</head>
+<body>
+    <h1>Customer Management</h1>
+
+    <!-- Crear cliente -->
+    <h2>Create Customer</h2>
+    <form id="createCustomerForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+        <button type="submit">Create Customer</button>
+    </form>
+
+    <!-- Obtener cliente -->
+    <h2>Get Customer</h2>
+    <label for="customerId">Customer ID:</label>
+    <input type="text" id="customerId" name="customerId"><br><br>
+    <button id="getCustomerButton">Get Customer</button>
+    <div id="customerData"></div>
+
+    <!-- Actualizar cliente -->
+    <h2>Update Customer</h2>
+    <form id="updateCustomerForm">
+        <label for="updateCustomerId">Customer ID:</label>
+        <input type="text" id="updateCustomerId" name="updateCustomerId" required><br><br>
+        <label for="updateFirstName">First Name:</label>
+        <input type="text" id="updateFirstName" name="updateFirstName" required><br><br>
+        <label for="updateLastName">Last Name:</label>
+        <input type="text" id="updateLastName" name="updateLastName" required><br><br>
+        <label for="updateEmail">Email:</label>
+        <input type="email" id="updateEmail" name="updateEmail" required><br><br>
+        <label for="updatePhoneNumber">Phone Number:</label>
+        <input type="text" id="updatePhoneNumber" name="updatePhoneNumber" required><br><br>
+        <button type="submit">Update Customer</button>
+    </form>
+
+    <!-- Eliminar cliente -->
+    <h2>Delete Customer</h2>
+    <form id="deleteCustomerForm">
+        <label for="deleteCustomerId">Customer ID:</label>
+        <input type="text" id="deleteCustomerId" name="deleteCustomerId" required><br><br>
+        <button type="submit">Delete Customer</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>
