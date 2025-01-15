@@ -6,26 +6,32 @@ async function createCustomer() {
     const phoneNumber = document.getElementById('phoneNumber').value;
 
     // Llamada a microservicio de creación de cliente
-    const response = await fetch('http://localhost:5000/customer', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            FirstName: firstName,
-            LastName: lastName,
-            Email: email,
-            PhoneNumber: phoneNumber
-        })
-    });
+    const response = await // Solicitar POST para crear un cliente
+fetch("http://127.0.0.1:5000/customer", {
+  method: "POST", // Asegúrate de usar POST aquí
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    FirstName: firstName,
+    LastName: lastName,
+    Email: email,
+    PhoneNumber: phoneNumber
+  })
+})
+.then(response => response.json())
+.then(data => {
+  if (data.message === "Customer created successfully!") {
+    alert("Customer created successfully!");
+  } else {
+    alert("Error: " + data.message);
+  }
+})
+.catch(error => {
+  console.error("Error:", error);
+  alert("Failed to create customer");
+});
 
-    const result = await response.json();
-    if (response.ok) {
-        alert('Customer created successfully!');
-    } else {
-        alert('Error creating customer: ' + result.message);
-    }
-}
 
 // Función para obtener la información de un cliente
 async function getCustomer() {
